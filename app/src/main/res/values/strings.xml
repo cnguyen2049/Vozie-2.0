@@ -15,6 +15,7 @@
     </string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_login">Login</string>
-    <string name="facebook_app_id">743081829152399</string>
+    <string name="facebook_app_id">1045486365507152</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
