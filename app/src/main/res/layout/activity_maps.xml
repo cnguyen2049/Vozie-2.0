@@ -1,8 +1,129 @@
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/map"
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.carprototype.carapp.MapsActivity" />
+    tools:context="com.example.carprototype.carapp.MapsActivity" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+            <AutoCompleteTextView android:id="@+id/search_text"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:padding="24dp"
+                android:hint="@string/search_hint"
+                android:background="@drawable/search_bg"
+                android:completionThreshold="1"
+                android:gravity="end|center_vertical"
+                android:textColorHint="#000000"
+                android:maxLines="1"
+                android:layout_weight="1"/>
+
+            <Button android:id="@+id/confirm_pickup_dest_button"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="26sp"
+                android:padding="5dp"
+                android:text="Confirm"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:background="@drawable/confirm_pickup_dest_button_selector"
+                android:visibility="invisible"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:layout_alignParentBottom="true">
+            <TextView android:id="@+id/pickup_location_textview"
+                android:gravity="center"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:background="@drawable/pickup_dest_textview_bg"
+                android:layout_margin="5dp"/>
+            <TextView android:id="@+id/dest_location_textview"
+                android:gravity="center"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:background="@drawable/pickup_dest_textview_bg"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/location_input_menu"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/red"
+            android:layout_alignParentBottom="true">
+            <LinearLayout android:id="@+id/pickup_layout"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <ImageView android:id="@+id/house_image_view"
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/house" />
+                <TextView
+                    android:text="Pickup Location"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:id="@+id/pickup_button" />
+            </LinearLayout>
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+            <LinearLayout android:id="@+id/dest_layout"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <ImageView android:id="@+id/dest_image_view"
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/dest_marker"/>
+                <TextView
+                    android:text="Destination Location"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:id="@+id/dropoff_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</fragment>

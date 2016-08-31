@@ -55,6 +55,9 @@ public class Login extends AppCompatActivity {
                 login();
             }
         });
+
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 
 
