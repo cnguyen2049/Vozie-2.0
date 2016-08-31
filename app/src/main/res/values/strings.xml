@@ -18,4 +18,9 @@
     <string name="facebook_app_id">1045486365507152</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Payment Activity Strings -->
+    <string name="new_payment_dialog_button">Confirm</string>
+    <string name="new_payment_dialog_title">Add New Payment Method</string>
+    <string name="new_payment_dialog_title_edit">Edit Payment Method</string>
+
 </resources>
