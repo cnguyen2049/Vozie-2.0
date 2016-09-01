@@ -55,9 +55,6 @@ public class Login extends AppCompatActivity {
                 login();
             }
         });
-
-        Intent intent = new Intent(this, PaymentActivity.class);
-        startActivity(intent);
     }
 
 
