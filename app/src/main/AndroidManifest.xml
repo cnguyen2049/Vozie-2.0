@@ -60,6 +60,10 @@
             android:name=".PaymentActivity"
             android:label="payment"
             android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_maps"
+            android:theme="@android:style/Theme.Light.NoTitleBar"/>
     </application>
 
 </manifest>
