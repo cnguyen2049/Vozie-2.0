@@ -55,11 +55,16 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <activity
             android:name=".PaymentActivity"
             android:label="payment"
             android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_maps"
+            android:theme="@android:style/Theme.Light.NoTitleBar"/>
     </application>
 
 </manifest>
