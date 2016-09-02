@@ -24,5 +24,8 @@
     <string name="new_payment_dialog_button">Confirm</string>
     <string name="new_payment_dialog_title">Add New Payment Method</string>
     <string name="new_payment_dialog_title_edit">Edit Payment Method</string>
-
+    <!-- About Activity Strings -->
+    <string name="about_twitter">Follow On Twitter</string>
+    <string name="about_play_store">Rate on Play Store</string>
+    <string name="about_facebook">Like on Facebook</string>
 </resources>

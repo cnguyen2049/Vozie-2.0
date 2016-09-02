@@ -94,7 +94,7 @@
                         android:layout_weight="2"/>
                     <TextView android:layout_height="0dp"
                         android:layout_width="wrap_content"
-                        android:text="Like on Facebook"
+                        android:text="@string/about_facebook"
                         android:textSize="10sp"
                         android:textColor="#FFFFFF"
                         android:fontFamily="sans-serif"
@@ -115,7 +115,7 @@
                         android:layout_weight="2"/>
                     <TextView android:layout_height="0dp"
                         android:layout_width="wrap_content"
-                        android:text="Rate on Play Store"
+                        android:text="@string/about_play_store"
                         android:textSize="10sp"
                         android:textColor="#FFFFFF"
                         android:fontFamily="sans-serif"
@@ -136,7 +136,7 @@
                         android:layout_weight="2"/>
                     <TextView android:layout_height="0dp"
                         android:layout_width="wrap_content"
-                        android:text="Follow On Twitter"
+                        android:text="@string/about_twitter"
                         android:textSize="10sp"
                         android:textColor="#FFFFFF"
                         android:fontFamily="sans-serif"
