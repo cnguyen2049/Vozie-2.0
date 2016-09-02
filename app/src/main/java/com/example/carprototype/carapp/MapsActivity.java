@@ -12,6 +12,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
@@ -39,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks, LocationListener,
         GoogleApiClient.OnConnectionFailedListener {
 
@@ -76,6 +78,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.MyAppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
@@ -83,6 +86,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        // Initialize menu bar and navigation drawer
+        MenuBarHandler menuBarHandler = new MenuBarHandler(this);
+        menuBarHandler.init();
 
         // Initialize providers helper class
         providers = new Providers(this);

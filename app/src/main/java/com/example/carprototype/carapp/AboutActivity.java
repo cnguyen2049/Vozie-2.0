@@ -3,17 +3,23 @@ package com.example.carprototype.carapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 
-public class AboutActivity extends Activity {
+public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.MyAppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+        // Initialize menu bar and navigation drawer
+        MenuBarHandler menuBarHandler = new MenuBarHandler(this);
+        menuBarHandler.init();
 
         String aboutText = "Vozie Inc. is a pre-paid ride sharing service HQd out of " +
                 "San Jose California located in the heart of the Silicon Valley. " +
