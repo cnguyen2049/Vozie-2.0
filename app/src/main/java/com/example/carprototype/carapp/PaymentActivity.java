@@ -2,6 +2,7 @@ package com.example.carprototype.carapp;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class PaymentActivity extends ActionBarActivity {
+public class PaymentActivity extends AppCompatActivity {
     private ListView mListView;
     private List<PaymentItem> items;
     private ListViewAdapter mAdapter;
@@ -23,9 +24,14 @@ public class PaymentActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.MyAppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         newPaymentDialog = new NewPaymentDialog(PaymentActivity.this);
+
+        // Initialize menu bar and navigation drawer
+        MenuBarHandler menuBarHandler = new MenuBarHandler(this);
+        menuBarHandler.init();
 
         // Initialize list of payment items and set adapter.
         mListView = (ListView) findViewById(R.id.main_list);
