@@ -7,7 +7,7 @@ import android.widget.Filter;
 
 import java.util.ArrayList;
 
-class BlockingArrayAdapter
+public class BlockingArrayAdapter
         extends ArrayAdapter<String>
 {
     private Filter filter = new BlockingFilter();
