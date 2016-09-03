@@ -88,6 +88,9 @@ public class MenuBarHandler {
                     case 0:
                         appToLaunch = new Intent(a, MapsActivity.class);
                         break;
+                    case 1:
+                        appToLaunch = new Intent(a, MilesActivity.class);
+                        break;
                     case 2:
                         appToLaunch = new Intent(a, PaymentActivity.class);
                         break;
