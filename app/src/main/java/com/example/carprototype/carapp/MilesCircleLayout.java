@@ -111,7 +111,7 @@ public class MilesCircleLayout extends View {
             if (clockwise)
                 changeMiles(10, clockwise);
             else
-                changeMiles(100, clockwise);
+                changeMiles(25, clockwise);
         }
     }
 
