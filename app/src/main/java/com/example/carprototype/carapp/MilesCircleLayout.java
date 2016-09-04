@@ -1,6 +1,7 @@
 package com.example.carprototype.carapp;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -8,6 +9,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.TextView;
@@ -52,16 +54,15 @@ public class MilesCircleLayout extends View {
         mPaint.setStrokeWidth(2);
 
         mSweepAngle = TOTAL_DEGREE / mItemCount;
-
-        mInnerRadius = dpToPx(135);
-        mOuterRadius = dpToPx(150);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-
         int width = getWidth();
         int height = getHeight();
+
+        mInnerRadius = width/2 - dpToPx(25);
+        mOuterRadius = width/2 - dpToPx(10);
 
         if (mOvalRect == null) {
             mOvalRect = new RectF(width / 2 - mOuterRadius, height / 2 - mOuterRadius, width / 2 + mOuterRadius, height / 2 + mOuterRadius);
