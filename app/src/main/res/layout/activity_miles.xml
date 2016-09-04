@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/menubar"
         android:layout_width="match_parent"
@@ -37,6 +38,7 @@
                 android:padding="5dp"/>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
+
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -47,66 +49,125 @@
             android:padding="10dp"
             android:orientation="vertical"
             android:background="#FFFFFF">
-            <FrameLayout android:id="@+id/circle_frame_layout"
+            <LinearLayout android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center">
-                <com.example.carprototype.carapp.MilesCircleLayout android:id="@+id/miles_circle_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-                <LinearLayout android:layout_width="match_parent"
+                android:gravity="center_vertical">
+                <ImageView android:id="@+id/back_button"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/back" />
+                <FrameLayout android:id="@+id/circle_frame_layout"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:layout_weight="6"
                     android:gravity="center">
-                    <TextView android:id="@+id/circle_miles_text"
-                        android:text="10"
-                        android:fontFamily="sans-serif"
-                        android:textSize="80sp"
-                        android:textColor="#FFFFFF"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"/>
-                    <TextView android:text="miles"
-                        android:fontFamily="sans-serif"
-                        android:textSize="16sp"
-                        android:textColor="#FFFFFF"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"/>
-                </LinearLayout>
-            </FrameLayout>
+                    <com.example.carprototype.carapp.MilesCircleLayout android:id="@+id/miles_circle_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <TextView android:id="@+id/circle_miles_text"
+                            android:text="10"
+                            android:fontFamily="sans-serif"
+                            android:textSize="80sp"
+                            android:textColor="#FFFFFF"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"/>
+                        <TextView android:text="miles"
+                            android:fontFamily="sans-serif"
+                            android:textSize="16sp"
+                            android:textColor="#FFFFFF"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"/>
+                    </LinearLayout>
+                </FrameLayout>
+                <ImageView android:id="@+id/next_button"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/next" />
+            </LinearLayout>
+
             <LinearLayout android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:padding="10dp">
-                <LinearLayout android:orientation="horizontal"
-                    android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="bottom">
+                <FrameLayout android:orientation="horizontal"
+                    android:layout_height="35dp"
                     android:layout_width="match_parent"
-                    android:gravity="center">
-
-                    <TextView android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+                    <ImageView android:id="@+id/day_night_image"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sun"
+                        android:layout_gravity="start"/>
+                    <TextView android:id="@+id/price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="$17.50"
                         android:fontFamily="sans-serif"
                         android:textColor="#000000"
                         android:textSize="36sp"
-                        android:layout_gravity="center_horizontal"/>
-                </LinearLayout>
+                        android:layout_gravity="center" />
+                </FrameLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    android:layout_margin="10dp"/>
                 <TextView android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="10 Miles  X  $1.75 per mile"
+                    android:text="Select Payment Method"
                     android:fontFamily="sans-serif"
                     android:textColor="#000000"
-                    android:textSize="26sp"
-                    android:gravity="center"/>
-                <TextView android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="$17.50"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/spinner_background"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp">
+                    <Spinner
+                        android:id="@+id/spinner2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="end"
+                        android:src="@drawable/spinner_icon" />
+                </RelativeLayout>
+                <Button android:id="@+id/new_payment_button"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:text="Confirm Purchase"
                     android:fontFamily="sans-serif"
-                    android:textColor="#000000"
-                    android:textSize="36sp"
-                    android:gravity="center"/>
+                    android:textColor="#000"
+                    android:background="@drawable/new_payment_top_panel_border"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"/>
             </LinearLayout>
         </LinearLayout>
         <ListView

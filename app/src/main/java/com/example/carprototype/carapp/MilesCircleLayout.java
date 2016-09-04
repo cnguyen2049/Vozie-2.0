@@ -16,14 +16,13 @@ public class MilesCircleLayout extends View {
     private final static int TOTAL_DEGREE = 360;
     private final static int START_DEGREE = -90;
 
-    private TextView milesTextView;
+    private TextView milesTextView, priceTextView;
     private Paint mPaint;
     private RectF mOvalRect = null;
     private Context mContext;
 
     private int mItemCount = 3;
     private int mSweepAngle;
-    private int currentMilesRotation = 10;
     private float currentRotationDegree = 0;
 
     private int mInnerRadius;
@@ -32,6 +31,9 @@ public class MilesCircleLayout extends View {
             getResources().getColor(R.color.lightRed),
             getResources().getColor(R.color.red)};
     private String[] mTitles = {"10", "25", "100"};
+
+    public boolean dayMode = true;
+    public int currentMilesRotation = 10;
 
     public MilesCircleLayout(Context context) {
         this(context, null);
@@ -87,17 +89,30 @@ public class MilesCircleLayout extends View {
         super.onDraw(canvas);
     }
 
-    public void setMilesTextView(TextView milesTextView) {
+    public void setTextViews(TextView milesTextView, TextView priceTextView) {
         this.milesTextView = milesTextView;
+        this.priceTextView = priceTextView;
     }
 
     public void cycleView(boolean clockwise) {
-        if (currentMilesRotation == 10)
-            changeMiles(25, clockwise);
-        else if (currentMilesRotation == 25)
-            changeMiles(100, clockwise);
-        else if (currentMilesRotation == 100)
-            changeMiles(10, clockwise);
+        if (currentMilesRotation == 10) {
+            if (clockwise)
+                changeMiles(25, clockwise);
+            else
+                changeMiles(100, clockwise);
+        }
+        else if (currentMilesRotation == 25) {
+            if (clockwise)
+                changeMiles(100, clockwise);
+            else
+                changeMiles(10, clockwise);
+        }
+        else if (currentMilesRotation == 100) {
+            if (clockwise)
+                changeMiles(10, clockwise);
+            else
+                changeMiles(100, clockwise);
+        }
     }
 
     private void changeMiles(int miles, boolean clockwise) {
@@ -105,16 +120,28 @@ public class MilesCircleLayout extends View {
             case 10:
                 currentMilesRotation = 10;
                 milesTextView.setText("10");
+                if (dayMode)
+                    priceTextView.setText("$17.50");
+                else
+                    priceTextView.setText("$23.10");
                 rotate(clockwise);
                 break;
             case 25:
                 currentMilesRotation = 25;
                 milesTextView.setText("25");
+                if (dayMode)
+                    priceTextView.setText("$42.50");
+                else
+                    priceTextView.setText("$56.50");
                 rotate(clockwise);
                 break;
             case 100:
                 currentMilesRotation = 100;
                 milesTextView.setText("100");
+                if (dayMode)
+                    priceTextView.setText("$164.00");
+                else
+                    priceTextView.setText("$222.00");
                 rotate(clockwise);
                 break;
         }
