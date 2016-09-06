@@ -1,6 +1,5 @@
 package com.example.carprototype.carapp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -23,6 +22,8 @@ public class MenuBarHandler {
     private AppCompatActivity a;
     private Toolbar tb;
     private String[] activities = {"Trip", "Get Miles", "Payment Methods", "Trip History", "About Vozie"};
+    private Intent appToLaunch;
+    private boolean launchApp = false;
 
     public MenuBarHandler(AppCompatActivity a) {
         this.a = a;
@@ -54,11 +55,35 @@ public class MenuBarHandler {
             }
         });
 
+        mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerOpened(View v) {
+
+            }
+
+            @Override
+            public void onDrawerClosed(View v) {
+                if (launchApp) {
+                    a.startActivity(appToLaunch);
+                    a.finish();
+                }
+                launchApp = false;
+            }
+
+            @Override
+            public void onDrawerStateChanged(int c) {
+
+            }
+
+            @Override
+            public void onDrawerSlide(View v, float f) {
+
+            }
+        });
+
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent appToLaunch;
-
                 switch (position) {
                     case 0:
                         appToLaunch = new Intent(a, MapsActivity.class);
@@ -73,8 +98,8 @@ public class MenuBarHandler {
                         appToLaunch = new Intent(a, a.getClass());
                 }
 
+                launchApp = true;
                 mDrawerLayout.closeDrawer(mDrawerList);
-                a.startActivity(appToLaunch);
             }
         });
     }
